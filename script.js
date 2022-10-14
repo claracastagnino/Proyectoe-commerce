@@ -10,10 +10,11 @@ if(nombreIngresadoCliente != ""){
 }
 
 
-function Producto (nombre, precio,stock,)  {
+function Producto (nombre, precio,stock,img)  {
     this.nombre = nombre;
     this.precio = precio;
     this.stock = stock;
+    this.img = img
     this.restarStock = function(cantidad) {
           this.stock -= cantidad
     }
@@ -28,12 +29,27 @@ let producto3 = new Producto ("Delineador", parseInt(56),parseInt(25))
 
 let listaProductos = [producto1, producto2,producto3]
 
+for(const prod of listaProductos) {
+
+let card = document.createElement("div")
+
+card.className = "card"
+
+card.innerHTML = `<img src=${prod.img}></img><h6>${prod.nombre}</h6><p>Precio: $ ${prod.precio}</p><p>Stock disponible ${prod.stock}</p>`
+
+catalogoProductos.append(card)
+
+}
+
+
+
+
+
 let listaNombresProductos = []
 
 for(const prod of listaProductos){
    listaNombresProductos.push(prod.nombre)
 }
-
 
 
 let respuestaUsuario = prompt( " Desea ver los productos disponibles: Por favor ingrese \nSI  \nNO ")

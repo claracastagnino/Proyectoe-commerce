@@ -1,0 +1,10 @@
+#catalogoProductos{
+    display: flex;
+}
+.card{
+    border: 7px;
+    width: 100px;
+    height: 50px;
+    background-color: lightslategrey;
+    border-color: black;
+}
