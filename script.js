@@ -10,7 +10,7 @@ if(nombreIngresadoCliente != ""){
 }
 
 
-function Producto (nombre, precio,stock)  {
+function Producto (nombre, precio,stock,)  {
     this.nombre = nombre;
     this.precio = precio;
     this.stock = stock;
@@ -39,10 +39,9 @@ for(const prod of listaProductos){
 let respuestaUsuario = prompt( " Desea ver los productos disponibles: Por favor ingrese \nSI  \nNO ")
 
 if(respuestaUsuario =="SI") {
-  alert(" Los productos disponibles son: \n - " + listaNombresProductos.join(" \n -"))
+  alert(" Los productos disponibles son: \n - " + listaNombresProductos.join(" \n-"))
 }
-
-else(respuestaUsuario == "NO"){
+else{
     alert("Gracias" +" "+ nombreIngresadoCliente +" " + "por tu visita" )
 }
 
@@ -57,19 +56,25 @@ else(respuestaUsuario == "NO"){
 while (productoCompra != "ESC"){
 
     if (productoCompra.toUpperCase () == "BROCHA DE MAQUILLAJE") {
-        let producto1.stock = prompt("Ingrese la cantidad de " + producto1.nombre + "desea comprar:")
-        calculoStock = (producto1.cantidad , producto1.stock, producto1.precio)
-        producto1.restarStock (producto1.cantidad)
+        let cantidadAComprar1 = prompt("Ingrese la cantidad de " + producto1.nombre + " desea comprar:")
+       if(cantidadAComprar1 <= producto1.stock){
+        precioTotal = precioTotal + (cantidadAComprar1 * producto1.precio)
+       }
+        else{
+            alert("Actualmente tenemos " + producto1.stock + " unidades de este producto")
+        }
+       /* calculoStock = (cantidadAComprar1 , producto1.stock, producto1.precio)
+        producto1.restarStock (producto1.cantidadAComprar1) */
     }
     else if ( productoCompra.toUpperCase () == "LABIAL") {
-        let producto2 = prompt("Ingrese la cantidad de " + producto2.nombre + "desea comprar:")
-        calculoStock = (producto2.cantidad , producto2.stock, producto2.precio)
-        producto2.restarStock (producto2.cantidad)
+        let cantidadAComprar2 = prompt("Ingrese la cantidad de " + producto2.nombre + " desea comprar:")
+        calculoStock = (cantidadAComprar2 , producto2.stock, producto2.precio)
+        producto2.restarStock (producto2.cantidadAComprar2)
     }
     else if ( productoCompra.toUpperCase () == "DELINEADOR") {
-        let producto3= prompt("Ingrese la cantidad de " + producto3.nombre + "desea comprar:")
-        calculoStock =(producto3.cantidad , producto3.stock, producto3.precio)
-        producto3.restarStock (producto3.cantidad)
+        let cantidadAComprar3= prompt("Ingrese la cantidad de " + producto3.nombre + " desea comprar:")
+        calculoStock =( cantidadAComprar3, producto3.stock, producto3.precio)
+        producto3.restarStock (producto3.cantidadAComprar3)
     }
     else ( 
         alert( "No tenemos ese producto a la venta")
