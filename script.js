@@ -14,21 +14,22 @@ function Producto (nombre, precio,stock,img)  {
     this.nombre = nombre;
     this.precio = precio;
     this.stock = stock;
-    this.img = img
+    this.img = img;
+    this.cat = cat
     this.restarStock = function(cantidad) {
           this.stock -= cantidad
     }
     
 }
 
-let producto1 = new Producto ("Brocha de maquillaje", parseInt(50), parseInt(30))
-let producto2 = new Producto ("Labial", parseInt(80), parseInt(45))
-let producto3 = new Producto ("Delineador", parseInt(56),parseInt(25))
+let producto1 = new Producto ("Brocha de maquillaje", parseInt(50), parseInt(30),"../imagenes/BrochasdeMaquillaje,png","Rostro")
+let producto2 = new Producto ("Labial rojo", parseInt(80), parseInt(45),"../imagenes/labialrojo.wepb","Labios")
+let producto3 = new Producto ("Delineador", parseInt(56),parseInt(25), "../imagenes/delineador.jpg" , "Ojos")
 
 
 
 let listaProductos = [producto1, producto2,producto3]
-
+/*
 for(const prod of listaProductos) {
 
 let card = document.createElement("div")
@@ -41,7 +42,7 @@ catalogoProductos.append(card)
 
 }
 
-
+*/
 
 
 
@@ -75,6 +76,7 @@ while (productoCompra != "ESC"){
         let cantidadAComprar1 = prompt("Ingrese la cantidad de " + producto1.nombre + " desea comprar:")
        if(cantidadAComprar1 <= producto1.stock){
         precioTotal = precioTotal + (cantidadAComprar1 * producto1.precio)
+        alert("El precio total es " + precioTotal )
        }
         else{
             alert("Actualmente tenemos " + producto1.stock + " unidades de este producto")
@@ -84,7 +86,7 @@ while (productoCompra != "ESC"){
     }
     else if ( productoCompra.toUpperCase () == "LABIAL") {
         let cantidadAComprar2 = prompt("Ingrese la cantidad de " + producto2.nombre + " desea comprar:")
-        calculoStock = (cantidadAComprar2 , producto2.stock, producto2.precio)
+       calculoStock = (cantidadAComprar2 - producto2.stock)
         producto2.restarStock (producto2.cantidadAComprar2)
     }
     else if ( productoCompra.toUpperCase () == "DELINEADOR") {
