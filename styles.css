@@ -8,3 +8,10 @@
     background-color: lightslategrey;
     border-color: black;
 }*/
+.producto {
+    max-width: 20%;
+    padding: 10%;
+    margin: 10%;
+    margin-bottom: 20%;
+    box-shadow: 2px 6px 3px 3px rgba(0, 0, 0, 0.3);
+}
